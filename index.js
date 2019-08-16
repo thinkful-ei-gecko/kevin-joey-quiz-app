@@ -34,7 +34,7 @@ function generateQuestion(){
               <span>${data[questionNumber].answers[3]}</span>
             </label>
             <p class="correct-or-wrong-text"></p>
-            <button type="button" class="submitButton">Submit</button>
+            <button type="submit" class="submitButton">Submit</button>
           </fieldset>
         </form>
       </div>
@@ -43,7 +43,8 @@ function generateQuestion(){
 }
 
 function handleSubmit(){
-  $('main').on('click keypress', '.submitButton', event => {
+  $('main').on('submit', '.submitButton', event => {
+    
     let selectedAnswer = $('input:checked').val();
     console.log(selectedAnswer);
     let rightAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
@@ -54,9 +55,21 @@ function handleSubmit(){
     else{ 
       $('.correct-or-wrong-text').text('WRONG');
     }
+    $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
+    
+
   });
 }
+function handleNext(){
+  $('main').on('click keypress', '.nextButton', event => {
+    questionNumber ++;
+    $('.quizForm').remove();
+    generateQuestion();
+  });
+}
+
 $(()=>{
   startQuiz();
   handleSubmit();
+  handleNext();
 });

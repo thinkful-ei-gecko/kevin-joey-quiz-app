@@ -4,9 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Dungeons & Dragons Quiz</title>
 </head>
 <body>
-  
+  <header>
+    <span class="score">SCORE: 2 correct, 5 wrong</span>
+  </header>
+  <main>
+    <section class="quizForm">
+      <div class="question-1">
+        <h1>Question 1 of 10</h1>
+        <h2>The question is written here (?)</h2>
+        <form>
+          <fieldset>
+            <!-- User selected this answer, AND it's correct -->
+            <label class="answerOption correct-answer">
+              <input type="radio" value="Answer" name="answer" required="">
+              <span>Answer</span>
+            </label>
+            <label class="answerOption">
+              <input type="radio" value="Answer" name="answer" required="">
+              <span>Answer</span>
+            </label>
+            <label class="answerOption">
+              <input type="radio" value="Answer" name="answer" required="">
+              <span>Answer</span>
+            </label>
+            <label class="answerOption">
+              <input type="radio" value="Answer" name="answer" required="">
+              <span>Answer</span>
+            </label>
+            <span class="correct-notification">CORRECT!</span>
+            <button type="submit" class="nextButton">Next</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

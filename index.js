@@ -1,11 +1,14 @@
 'use strict';
 
 let questionNumber = 0;
+let amountCorrect = 0;
+let amountWrong = 0;
 
 function startQuiz(){
-  $('.startScreen').on('click keypress', '.startButton', () => {
+  $('main').on('click keypress', '.startButton', () => {
     $('.startScreen').remove(); 
     generateQuestion();
+    updateScore();
   });
 }
 
@@ -49,21 +52,28 @@ function handleSubmit(){
     let correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
     if( selectedAnswer === correctAnswer){
       $('.correct-or-wrong-text').text('CORRECT');
+      amountCorrect++;
     }
     else{ 
       $('.correct-or-wrong-text').text('WRONG');
+      amountWrong++;
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
     $('fieldset').prop( 'disabled', true );
+    updateScore();
   });
 }
 
 function handleNext(){
   $('main').on('click keypress', '.nextButton', () => {
-    questionNumber ++;
+    questionNumber++;
     $('.quizForm').remove();
     generateQuestion();
   });
+}
+
+function updateScore(){
+  $('.score').text(`SCORE: ${amountCorrect} correct, ${amountWrong} wrong`);
 }
 
 $(()=>{

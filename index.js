@@ -1,17 +1,17 @@
 'use strict';
+
 let questionNumber = 0;
 
 function startQuiz(){
-  $('.quiz-screen').on('click keypress', '.startButton', event => {
-    //console.log(event)
-    $('.quiz-screen').remove(); 
+  $('.startScreen').on('click keypress', '.startButton', () => {
+    $('.startScreen').remove(); 
     generateQuestion();
   });
-
 }
+
 function generateQuestion(){
   $('main').append(`
-  <section class="quizForm">
+    <section class="quizForm">
       <div class="question-1">
         <h1>Question ${questionNumber + 1} of ${data.length}</h1>
         <h2>${data[questionNumber].question}</h2>
@@ -33,9 +33,9 @@ function generateQuestion(){
               <input type="radio" value="${data[questionNumber].answers[3]}" name="answer" required="">
               <span>${data[questionNumber].answers[3]}</span>
             </label>
-            <p class="correct-or-wrong-text"></p>
-            <button type="submit" class="submitButton">Submit</button>
           </fieldset>
+          <p class="correct-or-wrong-text"></p>
+          <button type="submit" class="submitButton">Submit</button>
         </form>
       </div>
     </section>
@@ -43,25 +43,23 @@ function generateQuestion(){
 }
 
 function handleSubmit(){
-  $('main').on('submit', '.submitButton', event => {
-    
+  $('main').submit(event => {
+    event.preventDefault();
     let selectedAnswer = $('input:checked').val();
-    console.log(selectedAnswer);
-    let rightAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
-    console.log(rightAnswer);
-    if( selectedAnswer === rightAnswer){
+    let correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
+    if( selectedAnswer === correctAnswer){
       $('.correct-or-wrong-text').text('CORRECT');
     }
     else{ 
       $('.correct-or-wrong-text').text('WRONG');
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
-    
-
+    $('fieldset').prop( 'disabled', true );
   });
 }
+
 function handleNext(){
-  $('main').on('click keypress', '.nextButton', event => {
+  $('main').on('click keypress', '.nextButton', () => {
     questionNumber ++;
     $('.quizForm').remove();
     generateQuestion();

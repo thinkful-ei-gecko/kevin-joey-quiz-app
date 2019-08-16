@@ -49,6 +49,5 @@ const data = [
     question: 'Which of the following is not a condition?',
     answers: ['Invisible','Exhausted','Prone','Charmed'],
     correctAnswer: 1,
-  },
-    
+  }, 
 ];

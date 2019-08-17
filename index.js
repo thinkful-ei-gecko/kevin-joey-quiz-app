@@ -21,19 +21,19 @@ function generateQuestion(){
         <form>
           <fieldset>
             <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[0]}" name="answer" required="">
+              <input type="radio" value="${data[questionNumber].answers[0]}" name="answer" required>
               <span>${data[questionNumber].answers[0]}</span>
             </label>
             <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[1]}" name="answer" required="">
+              <input type="radio" value="${data[questionNumber].answers[1]}" name="answer" required>
               <span>${data[questionNumber].answers[1]}</span>
             </label>
             <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[2]}" name="answer" required="">
+              <input type="radio" value="${data[questionNumber].answers[2]}" name="answer" required>
               <span>${data[questionNumber].answers[2]}</span>
             </label>
             <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[3]}" name="answer" required="">
+              <input type="radio" value="${data[questionNumber].answers[3]}" name="answer" required>
               <span>${data[questionNumber].answers[3]}</span>
             </label>
           </fieldset>
@@ -46,12 +46,13 @@ function generateQuestion(){
 }
 
 function handleSubmit(){
+  // let's try .on('submit') here
   $('main').submit(event => {
     event.preventDefault();
-    let selectedAnswer = $('input:checked').val();
-    let correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
-    if ( selectedAnswer === correctAnswer){
-      // add "correct" CSS style
+    const selectedAnswer = $('input:checked').val();
+    const correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
+    // apply "correct answer" CSS style here (border around the element)
+    if (selectedAnswer === correctAnswer){
       $('.correct-or-wrong-text').text('CORRECT');
       amountCorrect++;
     }
@@ -60,7 +61,7 @@ function handleSubmit(){
       amountWrong++;
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
-    $('fieldset').prop( 'disabled', true );
+    $('fieldset').prop('disabled', true);
     updateScore();
   });
 }
@@ -84,7 +85,7 @@ function updateScore(){
 }
 
 function removeScoreHeader(){
-  $('.score').text('');
+  $('.score').empty();
 }
 
 function resetAllVariables(){
@@ -109,7 +110,6 @@ function goToStartScreen(){
   $('main').on('click keypress', '.restartButton', () => {
     $('.endScreen').remove();
     resetAllVariables();
-
     $('main').append(`
       <section class="startScreen">
         <h1>How Well Do You Know "Dungeons & Dragons"?</h1>
@@ -119,7 +119,7 @@ function goToStartScreen(){
   });
 }
 
-$(()=>{
+$(() => {
   startQuiz();
   handleSubmit();
   handleNext();

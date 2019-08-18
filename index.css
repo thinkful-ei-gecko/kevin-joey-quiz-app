@@ -1,29 +1,32 @@
 html { 
     box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 *, *:before, *:after { 
     box-sizing: inherit; 
 }
-body{
+
+body {
     background-color: #b72027;
 }
+
 .startScreen {
    display: flex;
    align-items: center; 
-   flex-direction: column;
-    
+   flex-direction: column;   
 }
-.startScreen h1{
+
+.startScreen h1 {
     text-align: center;
     font-size: 40px;
-    color: white;
-
-
+    color: #ffd700;
+    font-variant: small-caps;
  }
+
  button {
-     margin-top: 400px;
-     display: inline-block;
+    margin-top: 75%;
+    display: inline-block;
     border: none;
     padding: 1rem 2rem;
     text-decoration: none;

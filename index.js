@@ -46,8 +46,7 @@ function generateQuestion(){
 }
 
 function handleSubmit(){
-  // let's try .on('submit') here
-  $('main').submit(event => {
+  $('main').on('submit', event => {
     event.preventDefault();
     const selectedAnswer = $('input:checked').val();
     const correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;

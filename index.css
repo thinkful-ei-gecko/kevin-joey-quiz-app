@@ -9,25 +9,47 @@ html {
 
 body {
     background-color: #b72027;
+    
+}
+img{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .startScreen {
-   display: flex;
+   display: grid;
+   grid-row-gap: 30px;
    align-items: center; 
+<<<<<<< Updated upstream
    flex-direction: column;   
+=======
+   flex-direction: column;
+>>>>>>> Stashed changes
 }
 
 .startScreen h1 {
     text-align: center;
     font-size: 40px;
+<<<<<<< Updated upstream
     color: #ffd700;
     font-variant: small-caps;
+=======
+    color: white;
+    
+
+
+>>>>>>> Stashed changes
  }
 
  button {
+<<<<<<< Updated upstream
     margin-top: 75%;
+=======
+>>>>>>> Stashed changes
     display: inline-block;
     border: none;
+    border-radius: 9px;
     padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;

@@ -17,7 +17,7 @@ function generateQuestion(){
     <section class="quizForm">
       <div class="question-1">
         <h1>Question ${questionNumber + 1} of ${data.length}</h1>
-        <h2>${data[questionNumber].question}</h2>
+        <h3>${data[questionNumber].question}</h3>
         <form>
           <fieldset>
             <label class="answerOption">
@@ -49,8 +49,20 @@ function handleSubmit(){
   $('main').on('submit', event => {
     event.preventDefault();
     const selectedAnswer = $('input:checked').val();
-    const correctAnswer = `${data[questionNumber].answers[data[questionNumber].correctAnswer]}`;
+
+    const theQuestion = data[questionNumber];
+    const indexOfCorrectAnswer = theQuestion.correctAnswer;
+    const correctAnswer = `${theQuestion.answers[indexOfCorrectAnswer]}`;
+
     // apply "correct answer" CSS style here (border around the element)
+    let allRadioElements = $(':radio').toArray();
+    for (let i = 0; i < allRadioElements.length; i++) {
+      if ($(allRadioElements[i]).attr('value') === correctAnswer){
+        $(allRadioElements[i]).parent().addClass('correctHighlight');
+        break;
+      }
+    }
+
     if (selectedAnswer === correctAnswer){
       $('.correct-or-wrong-text').text('CORRECT');
       amountCorrect++;
@@ -80,7 +92,7 @@ function handleNext(){
 }
 
 function updateScore(){
-  $('.score').text(`SCORE: ${amountCorrect} correct, ${amountWrong} wrong`);
+  $('.score').text(`${amountCorrect} correct, ${amountWrong} wrong`);
 }
 
 function removeScoreHeader(){
@@ -105,22 +117,28 @@ function goToEndScreen(){
   `);
 }
 
-function goToStartScreen(){
+function restart(){
   $('main').on('click keypress', '.restartButton', () => {
     $('.endScreen').remove();
     resetAllVariables();
-    $('main').append(`
-      <section class="startScreen">
-        <h1>How Well Do You Know "Dungeons & Dragons"?</h1>
-        <button type="button" class="startButton">Begin Quiz</button>
-      </section>
-    `);
+    initializeStartScreen();
   });
 }
 
+function initializeStartScreen(){
+  $('main').append(`
+    <section class="startScreen">
+      <h1>How Well Do You Know "Dungeons & Dragons"?</h1>
+      <img src="https://png2.kisspng.com/sh/dc93024927e664ccce5e3d60c5d4694a/L0KzQYm3VsA4N6lAfZH0aYP2gLBuTfQzOF54keV9ZX2wdLrqhb1lfZ9sfdH3cz3ngrLujB50NZ56jNN3dIOwfbL6lPUubGM1RadrMUnmRbS7UvVmapI8Rqk5N0G5R4m9UcUzQGU2TagDNEG8QoO1kP5o/kisspng-d20-system-dice-dungeons-dragons-mutants-maste-d20-5b19c5c42eeba7.7071678615284156841922.png" alt= "a 20 sided dice for dungeons and dragons">
+      <button type="button" class="startButton">Begin Quiz</button>
+    </section>
+  `);
+}
+
 $(() => {
+  initializeStartScreen();
   startQuiz();
   handleSubmit();
   handleNext();
-  goToStartScreen();
+  restart();
 });

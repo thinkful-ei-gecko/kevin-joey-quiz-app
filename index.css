@@ -1,0 +1,38 @@
+html { 
+    box-sizing: border-box; 
+}
+
+*, *:before, *:after { 
+    box-sizing: inherit; 
+}
+body{
+    background-color: #b72027;
+}
+.startScreen {
+   display: flex;
+   align-items: center; 
+   flex-direction: column;
+    
+}
+.startScreen h1{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+
+
+ }
+ button {
+     margin-top: 400px;
+     display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: black;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+ }

@@ -136,4 +136,52 @@ header {
 }
 
 /*need to add feedback to all buttons*/
-/*need to style finish page*/
+@media screen and (min-width: 1025px){
+button {
+  width: 500px;  
+  margin-left: auto;
+  margin-right: auto;
+}
+input{
+  visibility: hidden;
+}
+fieldset{
+  text-align: center;
+}
+
+.answerOption{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-top: 3px;
+
+
+}
+button:hover{
+  font-size: 30px;
+}
+.correctHighlight{
+  padding: 0;
+}
+.answerOption:hover{
+  background-color: rgb(56, 56, 56);
+  color: white;
+}
+input:checked {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  visibility: inherit;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 8px solid black;
+  outline: none;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  
+
+}

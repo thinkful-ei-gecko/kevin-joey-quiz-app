@@ -68,11 +68,11 @@ function handleSubmit(){
     }
 
     if (selectedAnswer === correctAnswer){
-      $('.correct-or-wrong-text').text('CORRECT');
+      $('.correct-or-wrong-text').text('correct!');
       amountCorrect++;
     }
     else { 
-      $('.correct-or-wrong-text').text('WRONG');
+      $('.correct-or-wrong-text').text('wrong!');
       amountWrong++;
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');

@@ -56,6 +56,7 @@ button {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+  margin: 4px; 
 }
 
 .correctHighlight {
@@ -88,23 +89,23 @@ fieldset {
   margin: 0;
   border: 0;
   text-align: left;
+  font-size: 19px
 }
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border: 2px solid black;
-    transition: 0.2s all linear;
     outline: none;
     margin-right: 5px;
     position: relative;
     top: 2px;
 }
 input:checked {
-    border: 8px solid #161515;
+  border: 8px solid black;
 }
 input[type=radio] {
     flex: 0 0 auto;
@@ -113,6 +114,7 @@ input[type=radio] {
 
 header {
   text-align: center;
+  font-size: 17px;
 }
 
 /*need to add feedback to all buttons*/

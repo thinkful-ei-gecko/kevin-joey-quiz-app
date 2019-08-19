@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: #b72027;
+  background-color:#b72027;
   
 }
 
@@ -16,6 +16,8 @@ img {
   width: 200px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
+
 }
 
 .startScreen {
@@ -55,10 +57,15 @@ button {
 }
 
 .correctHighlight {
-  /*border: 2px solid black;*/
+  border: 2px solid black;
   border-radius: 3px;
-  background-color: white;
-  opacity: 0.5;
+  background-color: #2b5e1f;
+  color: white;
+  
+}
+.question-1{
+    text-align: center;
+    
 }
 
 form {
@@ -72,9 +79,33 @@ fieldset {
   flex-direction: column;
   padding: 0;
   margin: 0;
-  border: 0
+  border: 0;
+  text-align: left;
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid black;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+input:checked {
+    border: 8px solid #b72027;
+}
+input[type=radio] {
+    flex: 0 0 auto;
+    margin-right: 10px;
 }
 
 header {
   text-align: center;
 }
+
+/*need to add feedback to all buttons*/

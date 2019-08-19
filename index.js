@@ -10,13 +10,21 @@ function startQuiz(){
     $('.startScreen').remove(); 
     generateQuestion();
     updateScore();
-    $('header').append(`${diceImage}`);
+    applyNewPageStyling();
   });
-  
+}
+
+function applyNewPageStyling(){
+  $('header').append(`${diceImage}`);
+  $('body').css('background-color', 'white');
+}
+
+function resetPageStyling(){
+  $('header img').remove();
+  $('body').css('background-color', '#b72027');
 }
 
 function generateQuestion(){
-  $('body').css('background-color', 'white');
   $('main').append(`
     <section class="quizForm">
       <div class="question-1">
@@ -96,7 +104,6 @@ function handleNext(){
 }
 
 function updateScore(){
-  
   $('.score').text(`${amountCorrect} correct, ${amountWrong} wrong`);
 }
 
@@ -125,7 +132,9 @@ function goToEndScreen(){
 function restart(){
   $('main').on('click keypress', '.restartButton', () => {
     $('.endScreen').remove();
+    removeScoreHeader();
     resetAllVariables();
+    resetPageStyling();
     initializeStartScreen();
   });
 }

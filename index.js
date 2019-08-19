@@ -51,7 +51,11 @@ function generateAnswers(){
       </label>
     `);
   }
-  $('.answerOption').addClass('answerHover');
+  toggleAnswerHoverStyle();
+}
+
+function toggleAnswerHoverStyle() {
+  $('.answerOption').toggleClass('answerHover');
 }
 
 function tabToFirstRadioInput() {
@@ -95,7 +99,7 @@ function handleSubmit(){
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
     $('fieldset').prop('disabled', true);
-    $('.answerOption').removeClass('answerHover');
+    toggleAnswerHoverStyle();
     updateScore();
   });
 }

@@ -141,7 +141,8 @@ header {
   }
 
   input {
-    visibility: hidden;
+    /*visibility: hidden;*/
+    border: white;
   }
 
   fieldset {

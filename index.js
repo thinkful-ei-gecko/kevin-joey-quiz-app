@@ -8,7 +8,7 @@ const diceImage = `<img src="https://i.imgur.com/E9gFCBr.png" alt= "a 20 sided d
 function startQuiz(){
   $('main').on('click keypress', '.startButton', () => {
     $('.startScreen').remove(); 
-    generateForm();
+    generateQuizForm();
     updateScore();
     applyNewPageStyling();
   });
@@ -24,11 +24,11 @@ function resetPageStyling(){
   $('body').css('background-color', '#b72027');
 }
 
-function generateForm(){
+function generateQuizForm(){
   $('main').append(`
-    <section class="quizForm">   
+    <section class="quizForm" role="region" aria-label="Quiz-Form">   
       <h1>Question ${questionNumber + 1} of ${data.length}</h1>
-      <h3>${data[questionNumber].question}</h3>
+      <h2>${data[questionNumber].question}</h2>
       <form>
         <fieldset>
         </fieldset>
@@ -113,7 +113,7 @@ function handleNext(){
       goToEndScreen();
     }
     else {
-      generateForm();
+      generateQuizForm();
     }
   });
 }

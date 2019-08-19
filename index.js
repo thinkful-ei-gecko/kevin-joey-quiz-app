@@ -28,9 +28,9 @@ function generateQuizForm(){
   $('main').append(`
     <section class="quizForm" role="region" aria-label="Quiz-Form">   
       <h1>Question ${questionNumber + 1} of ${data.length}</h1>
-      <h2>${data[questionNumber].question}</h2>
       <form>
         <fieldset>
+          <legend>${data[questionNumber].question}</legend>
         </fieldset>
         <p class="correct-or-wrong-text"></p>
         <button type="submit" class="submitButton">Submit</button>

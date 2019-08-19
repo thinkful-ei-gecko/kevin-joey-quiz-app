@@ -89,7 +89,11 @@ fieldset {
   margin: 0;
   border: 0;
   text-align: left;
-  font-size: 19px
+  font-size: 25px
+}
+
+legend {
+  font-size: 25px;
 }
 
 input {
@@ -149,10 +153,6 @@ header {
     margin-right: auto;
   }
 
-  h2 {
-    font-size: 30px;
-  }
-
   input {
     /*visibility: hidden;*/
     border: white;
@@ -169,7 +169,6 @@ header {
     border: 2px solid black;
     border-radius: 6px;
     margin: 15px auto 15px;
-    font-size: 30px;
   }
 
   button:hover {

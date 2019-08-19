@@ -68,17 +68,22 @@ function handleSubmit(){
     let allRadioElements = $(':radio').toArray();
     for (let i = 0; i < allRadioElements.length; i++) {
       if ($(allRadioElements[i]).attr('value') === correctAnswer){
-        $(allRadioElements[i]).parent().addClass('correctHighlight');
+        if (selectedAnswer === correctAnswer){
+          $(allRadioElements[i]).parent().addClass('correctHighlightGreen');
+        }
+        else { 
+          $(allRadioElements[i]).parent().addClass('correctHighlightYellow');
+        }
         break;
       }
     }
 
     if (selectedAnswer === correctAnswer){
-      $('.correct-or-wrong-text').text('correct!');
+      $('.correct-or-wrong-text').text('Correct!');
       amountCorrect++;
     }
     else { 
-      $('.correct-or-wrong-text').text('wrong!');
+      $('.correct-or-wrong-text').text(`Wrong! The correct answer is ${correctAnswer}.`);
       amountWrong++;
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');

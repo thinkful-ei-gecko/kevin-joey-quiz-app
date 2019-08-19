@@ -1,4 +1,3 @@
-
 html { 
   box-sizing: border-box; 
 }
@@ -6,12 +5,10 @@ html {
 *, *:before, *:after { 
   box-sizing: inherit;
   font-family: 'Amiri', sans-serif;
- 
 }
 
 body {
   background-color:#b72027;
-  
 }
 
 img {
@@ -19,7 +16,6 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: block;
-
 }
 
 .startScreen {
@@ -52,7 +48,7 @@ button {
               transform 150ms ease;                     
 }
 
-button:hover{
+button:hover {
   font-size: 25px;
 }
 
@@ -63,23 +59,19 @@ button:hover{
   margin: 4px; 
 }
 
-.correctHighlight {
-  /*border: 2px solid black;*/
+.correctHighlightGreen {
   border-radius: 6px;
-  background-color: #235018;
+  background-color: #235018b0;
   color: white;
-  font-size: 25px;
-  text-align: center;
-  padding-right: 10%
 }
 
-.correctHighlight input{
-  visibility: hidden;
+.correctHighlightYellow {
+  border-radius: 6px;
+  background-color: #eeff00c9;
 }
 
-.question-1{
-    text-align: center;
-    
+.question-1 {
+  text-align: center; 
 }
 
 form {
@@ -99,24 +91,26 @@ fieldset {
 }
 
 input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 50%;
-    width: 14px;
-    height: 14px;
-    border: 2px solid black;
-    outline: none;
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid black;
+  outline: none;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
 }
+
 input:checked {
   border: 8px solid black;
 }
+
 input[type=radio] {
-    flex: 0 0 auto;
-    margin-right: 10px;
+  flex: 0 0 auto;
+  margin-right: 10px;
 }
 
 header {
@@ -127,9 +121,11 @@ header {
 .endScreen{
   text-align: center;
 }
+
 .endScreen h1{
   font-size: 30px;  
 }
+
 .finalScore{
   font-size: 20px; 
   margin-bottom: 50px; 
@@ -137,52 +133,50 @@ header {
 
 /*need to add feedback to all buttons*/
 @media screen and (min-width: 1025px){
-button {
-  width: 500px;  
-  margin-left: auto;
-  margin-right: auto;
-}
-input{
-  visibility: hidden;
-}
-fieldset{
-  text-align: center;
-}
+  button {
+    width: 500px;  
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.answerOption{
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid black;
-  border-radius: 6px;
-  margin-top: 3px;
+  input {
+    visibility: hidden;
+  }
 
+  fieldset {
+    text-align: center;
+  }
 
-}
-button:hover{
-  font-size: 30px;
-}
-.correctHighlight{
-  padding: 0;
-}
-.answerHover:hover{
-  background-color: rgb(56, 56, 56);
-  color: white;
-}
+  .answerOption {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin-top: 3px;
+  }
 
-input:checked {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  visibility: inherit;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  border: 8px solid black;
-  outline: none;
-  margin-right: 5px;
-  position: relative;
-  top: 2px;
-  
+  button:hover{
+    font-size: 30px;
+  }
 
+  .answerHover:hover {
+    background-color: rgb(56, 56, 56);
+    color: white;
+  }
+
+  input:checked {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    visibility: inherit;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    border: 8px solid black;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+  }
 }

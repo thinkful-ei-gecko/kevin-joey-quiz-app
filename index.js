@@ -41,18 +41,27 @@ function generateForm(){
   `);
 
   generateAnswers();
+  tabToFirstRadioInput();
 }
 
 function generateAnswers(){
   for (let i = 0; i < data[questionNumber].answers.length; i++){
     $('fieldset').append(`
       <label class="answerOption">
-        <input type="radio" value="${data[questionNumber].answers[i]}" name="answer" required>
+        <input type="radio" id="radio-${i}" value="${data[questionNumber].answers[i]}" name="answer" required>
         <span>${data[questionNumber].answers[i]}</span>
       </label>
     `);
   }
   $('.answerOption').addClass('answerHover');
+}
+
+function tabToFirstRadioInput() {
+  $('fieldset').keyup(event => {
+    if (event.keyCode === 9) {
+      $('#radio-0').prop('checked', true);
+    }
+  });
 }
 
 function handleSubmit(){

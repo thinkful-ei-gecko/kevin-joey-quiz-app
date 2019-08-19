@@ -116,7 +116,8 @@ input[type=radio] {
 
 header {
   text-align: center;
-  font-size: 17px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .endScreen {
@@ -128,16 +129,19 @@ header {
 }
 
 .finalScore {
-  font-size: 20px; 
+  font-size: 30px; 
   margin-bottom: 50px; 
 }
 
-/*need to add feedback to all buttons*/
 @media screen and (min-width: 1025px) {
   button {
     width: 500px;  
     margin-left: auto;
     margin-right: auto;
+  }
+
+  h3 {
+    font-size: 30px;
   }
 
   input {
@@ -155,7 +159,8 @@ header {
     margin-right: auto;
     border: 2px solid black;
     border-radius: 6px;
-    margin-top: 3px;
+    margin: 15px auto 15px;
+    font-size: 30px;
   }
 
   button:hover {

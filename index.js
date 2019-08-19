@@ -52,6 +52,7 @@ function generateAnswers(){
       </label>
     `);
   }
+  $('.answerOption').addClass('answerHover');
 }
 
 function handleSubmit(){
@@ -82,6 +83,7 @@ function handleSubmit(){
     }
     $('.submitButton').removeClass('submitButton').addClass('nextButton').text('next');
     $('fieldset').prop('disabled', true);
+    $('.answerOption').removeClass('answerHover');
     updateScore();
   });
 }

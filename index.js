@@ -26,17 +26,15 @@ function resetPageStyling(){
 
 function generateForm(){
   $('main').append(`
-    <section class="quizForm">
-      <div class="question-1">
-        <h1>Question ${questionNumber + 1} of ${data.length}</h1>
-        <h3>${data[questionNumber].question}</h3>
-        <form>
-          <fieldset>
-          </fieldset>
-          <p class="correct-or-wrong-text"></p>
-          <button type="submit" class="submitButton">Submit</button>
-        </form>
-      </div>
+    <section class="quizForm">   
+      <h1>Question ${questionNumber + 1} of ${data.length}</h1>
+      <h3>${data[questionNumber].question}</h3>
+      <form>
+        <fieldset>
+        </fieldset>
+        <p class="correct-or-wrong-text"></p>
+        <button type="submit" class="submitButton">Submit</button>
+      </form>
     </section>
   `);
 

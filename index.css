@@ -50,6 +50,10 @@ button {
   text-align: center;
   transition: background 250ms ease-in-out, 
               transform 150ms ease;
+                          
+}
+button:hover{
+  font-size: 25px;
 }
 
 .correct-or-wrong-text {
@@ -91,6 +95,7 @@ fieldset {
   text-align: left;
   font-size: 19px
 }
+
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -115,6 +120,17 @@ input[type=radio] {
 header {
   text-align: center;
   font-size: 17px;
+}
+
+.endScreen{
+  text-align: center;
+}
+.endScreen h1{
+  font-size: 30px;  
+}
+.finalScore{
+  font-size: 20px; 
+  margin-bottom: 50px; 
 }
 
 /*need to add feedback to all buttons*/

@@ -113,7 +113,7 @@ function resetAllVariables(){
 function goToEndScreen(){
   $('main').append(`
     <section class="endScreen">
-      <h1>Here's your score</h1>
+      <h1>Here's your score:</h1>
       <p class="finalScore">
         ${amountCorrect} out of ${data.length} correct
       </p>

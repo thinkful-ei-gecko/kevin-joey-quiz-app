@@ -3,12 +3,12 @@
 let questionNumber = 0;
 let amountCorrect = 0;
 let amountWrong = 0;
-const diceImage = `<img src="https://png2.kisspng.com/sh/dc93024927e664ccce5e3d60c5d4694a/L0KzQYm3VsA4N6lAfZH0aYP2gLBuTfQzOF54keV9ZX2wdLrqhb1lfZ9sfdH3cz3ngrLujB50NZ56jNN3dIOwfbL6lPUubGM1RadrMUnmRbS7UvVmapI8Rqk5N0G5R4m9UcUzQGU2TagDNEG8QoO1kP5o/kisspng-d20-system-dice-dungeons-dragons-mutants-maste-d20-5b19c5c42eeba7.7071678615284156841922.png" alt= "a 20 sided dice for dungeons and dragons">`;
+const diceImage = `<img src="https://i.imgur.com/E9gFCBr.png" alt= "a 20 sided dice for dungeons and dragons">`;
 
 function startQuiz(){
   $('main').on('click keypress', '.startButton', () => {
     $('.startScreen').remove(); 
-    generateQuestion();
+    generateForm();
     updateScore();
     applyNewPageStyling();
   });
@@ -24,7 +24,7 @@ function resetPageStyling(){
   $('body').css('background-color', '#b72027');
 }
 
-function generateQuestion(){
+function generateForm(){
   $('main').append(`
     <section class="quizForm">
       <div class="question-1">
@@ -32,22 +32,6 @@ function generateQuestion(){
         <h3>${data[questionNumber].question}</h3>
         <form>
           <fieldset>
-            <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[0]}" name="answer" required>
-              <span>${data[questionNumber].answers[0]}</span>
-            </label>
-            <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[1]}" name="answer" required>
-              <span>${data[questionNumber].answers[1]}</span>
-            </label>
-            <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[2]}" name="answer" required>
-              <span>${data[questionNumber].answers[2]}</span>
-            </label>
-            <label class="answerOption">
-              <input type="radio" value="${data[questionNumber].answers[3]}" name="answer" required>
-              <span>${data[questionNumber].answers[3]}</span>
-            </label>
           </fieldset>
           <p class="correct-or-wrong-text"></p>
           <button type="submit" class="submitButton">Submit</button>
@@ -55,6 +39,19 @@ function generateQuestion(){
       </div>
     </section>
   `);
+
+  generateAnswers();
+}
+
+function generateAnswers(){
+  for (let i = 0; i < data[questionNumber].answers.length; i++){
+    $('fieldset').append(`
+      <label class="answerOption">
+        <input type="radio" value="${data[questionNumber].answers[i]}" name="answer" required>
+        <span>${data[questionNumber].answers[i]}</span>
+      </label>
+    `);
+  }
 }
 
 function handleSubmit(){
@@ -98,7 +95,7 @@ function handleNext(){
       goToEndScreen();
     }
     else {
-      generateQuestion();
+      generateForm();
     }
   });
 }

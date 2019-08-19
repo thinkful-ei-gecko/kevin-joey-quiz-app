@@ -49,9 +49,9 @@ button {
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, 
-              transform 150ms ease;
-                          
+              transform 150ms ease;                     
 }
+
 button:hover{
   font-size: 25px;
 }
@@ -64,7 +64,7 @@ button:hover{
 }
 
 .correctHighlight {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   border-radius: 6px;
   background-color: #235018;
   color: white;
@@ -72,9 +72,11 @@ button:hover{
   text-align: center;
   padding-right: 10%
 }
+
 .correctHighlight input{
   visibility: hidden;
 }
+
 .question-1{
     text-align: center;
     

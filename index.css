@@ -16,6 +16,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  margin-top: 30px;
 }
 
 .startScreen {
@@ -118,6 +119,14 @@ header {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
+}
+
+.score { 
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.678);
 }
 
 .endScreen {

@@ -63,6 +63,7 @@ button:hover {
   border-radius: 6px;
   background-color: #235018b0;
   color: white;
+  font-weight: bold;
 }
 
 .correctHighlightYellow {
@@ -118,21 +119,21 @@ header {
   font-size: 17px;
 }
 
-.endScreen{
+.endScreen {
   text-align: center;
 }
 
-.endScreen h1{
+.endScreen h1 {
   font-size: 30px;  
 }
 
-.finalScore{
+.finalScore {
   font-size: 20px; 
   margin-bottom: 50px; 
 }
 
 /*need to add feedback to all buttons*/
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1025px) {
   button {
     width: 500px;  
     margin-left: auto;
@@ -156,7 +157,7 @@ header {
     margin-top: 3px;
   }
 
-  button:hover{
+  button:hover {
     font-size: 30px;
   }
 

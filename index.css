@@ -1,10 +1,12 @@
+
 html { 
   box-sizing: border-box; 
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 *, *:before, *:after { 
-  box-sizing: inherit; 
+  box-sizing: inherit;
+  font-family: 'Amiri', sans-serif;
+ 
 }
 
 body {
@@ -30,7 +32,7 @@ img {
 .startScreen h1 {
   text-align: center;
   font-size: 40px;
-  color: #ffd700;
+  color: #fdfdfd;
   font-variant: small-caps;
 }
 
@@ -61,7 +63,12 @@ button {
   border-radius: 6px;
   background-color: #235018;
   color: white;
-  
+  font-size: 25px;
+  text-align: center;
+  padding-right: 10%
+}
+.correctHighlight input{
+  visibility: hidden;
 }
 .question-1{
     text-align: center;
